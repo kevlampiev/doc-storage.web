@@ -1,0 +1,17 @@
+{
+  "name": "doc-storage.web",
+  "version": "1.0.0",
+  "description": "The storage for documents in internet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dosc",
+    "document",
+    "agreement",
+    "mongoDB"
+  ],
+  "author": "Konstantin Evlampiev",
+  "license": "ISC"
+}
