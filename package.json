@@ -1,17 +1,25 @@
 {
   "name": "doc-storage.web",
   "version": "1.0.0",
-  "description": "The storage for documents in internet",
-  "main": "index.js",
+  "description": "Nuxt.js project",
+  "author": "kevlampiev <kevlampiev@gmail.com>",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
   },
-  "keywords": [
-    "dosc",
-    "document",
-    "agreement",
-    "mongoDB"
-  ],
-  "author": "Konstantin Evlampiev",
-  "license": "ISC"
+  "dependencies": {
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^4.19.1",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-vue": "^4.0.0"
+  }
 }
