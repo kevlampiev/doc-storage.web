@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css">
   <title>Docs</title>
 </head>
@@ -22,10 +26,13 @@
           <li class="menu__item"><a href="#">Календарь</a></li>
           <li class="menu__item">
             <a href="#">Выйти</a></li>
-
         </ul>
-
+        <div class="userInfo">
+          <img src="./face1.jpg" alt="" class="userInfo__photo">
+          <p class="userInfo__userName">Имя пользователя</p>
+        </div>
       </div>
+
       <div class="breadCrumbs">
         <a href="#" class="breadCrumbs__link">Система хранения ></a>
         <a href="#" class="breadCrumbs__link">Дом ></a>
@@ -36,15 +43,124 @@
     </header>
 
     <main>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur distinctio repellat quasi quis. Corrupti,
-      assumenda? Delectus alias tempora cumque laboriosam? Non, iusto mollitia pariatur blanditiis reprehenderit odio.
-      Aperiam, ipsam ullam sed iste tenetur veniam aspernatur tempora voluptates reprehenderit officia ut!
+      <h1>Система хранения </h1>
+      <div class="controlPanel">
+        <div class="searchForm">
+          <input class="searchForm__input" type="search" placeholder="Enter search string here...">
+          <button class="searchForm__button"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </div>
+        <button class="addBtn"><i class="fa fa-plus-square-o" aria-hidden="true">Добавить</i></button>
+      </div>
+
+      <div class="cardsContainer">
+
+        <section class="card">
+          <h2 class="card__header">Шкаф-купе большой</h2>
+          <div class="card__description"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio temporibus
+            inventore perspiciatis asperiores. Pariatur error perferendis maiores explicabo officiis expedita!</div>
+          <div class="card__itemsInfo">
+            3 ящика
+          </div>
+          <button class="card__editBtn"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+          <button class="card__deleteBtn"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+          <button class="card__showItemsBtn"><i class="fa fa-inbox" aria-hidden="true">Содержимое</i></button>
+        </section>
+
+        <section class="card">
+          <h2 class="card__header">Шкаф-купе в коридоре</h2>
+          <div class="card__description"> Pariatur error perferendis maiores explicabo officiis expedita!</div>
+          <div class="card__itemsInfo">
+            5 ящиков
+          </div>
+          <button class="card__editBtn"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+          <button class="card__deleteBtn"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+          <button class="card__showItemsBtn"><i class="fa fa-inbox" aria-hidden="true">Содержимое</i></button>
+        </section>
+
+        <section class="card">
+          <h2 class="card__header">Шкаф-купе большой</h2>
+          <div class="card__description"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio temporibus
+            inventore perspiciatis asperiores. Pariatur error perferendis maiores explicabo officiis expedita!</div>
+          <div class="card__itemsInfo">
+            3 ящика
+          </div>
+          <button class="card__editBtn"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+          <button class="card__deleteBtn"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+          <button class="card__showItemsBtn"><i class="fa fa-inbox" aria-hidden="true">Содержимое</i></button>
+        </section>
+
+        <section class="card">
+          <h2 class="card__header">Шкаф-купе в коридоре</h2>
+          <div class="card__description"> Pariatur error perferendis maiores explicabo officiis expedita!</div>
+          <div class="card__itemsInfo">
+            5 ящиков
+          </div>
+          <button class="card__editBtn"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+          <button class="card__deleteBtn"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+          <button class="card__showItemsBtn"><i class="fa fa-inbox" aria-hidden="true">Содержимое</i></button>
+        </section>
+
+        <section class="card">
+          <h2 class="card__header">Шкаф-купе большой</h2>
+          <div class="card__description"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio temporibus
+            inventore perspiciatis asperiores. Pariatur error perferendis maiores explicabo officiis expedita!</div>
+          <div class="card__itemsInfo">
+            3 ящика
+          </div>
+          <button class="card__editBtn"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+          <button class="card__deleteBtn"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+          <button class="card__showItemsBtn"><i class="fa fa-inbox" aria-hidden="true">Содержимое</i></button>
+        </section>
+
+        <section class="card">
+          <h2 class="card__header">Шкаф-купе в коридоре</h2>
+          <div class="card__description"> Pariatur error perferendis maiores explicabo officiis expedita!</div>
+          <div class="card__itemsInfo">
+            5 ящиков
+          </div>
+          <button class="card__editBtn"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+          <button class="card__deleteBtn"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+          <button class="card__showItemsBtn"><i class="fa fa-inbox" aria-hidden="true">Содержимое</i></button>
+        </section>
+        <section class="card">
+          <h2 class="card__header">Шкаф-купе большой</h2>
+          <div class="card__description"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio temporibus
+            inventore perspiciatis asperiores. Pariatur error perferendis maiores explicabo officiis expedita!</div>
+          <div class="card__itemsInfo">
+            3 ящика
+          </div>
+          <button class="card__editBtn"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+          <button class="card__deleteBtn"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+          <button class="card__showItemsBtn"><i class="fa fa-inbox" aria-hidden="true">Содержимое</i></button>
+        </section>
+
+        <section class="card">
+          <h2 class="card__header">Шкаф-купе в коридоре</h2>
+          <div class="card__description"> Pariatur error perferendis maiores explicabo officiis expedita!</div>
+          <div class="card__itemsInfo">
+            5 ящиков
+          </div>
+          <button class="card__editBtn"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+          <button class="card__deleteBtn"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+          <button class="card__showItemsBtn"><i class="fa fa-inbox" aria-hidden="true">Содержимое</i></button>
+        </section>
+
+      </div>
+
+      <div class="summaryBand">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi, reiciendis?
+      </div>
     </main>
 
     <footer>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam porro odio quibusdam consequuntur reiciendis
-      libero
-      exercitationem inventore facilis, et cum.
+      <div class="footer__column">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolores odit repellat.
+      </div>
+      <div class="footer__column">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, debitis!</div>
+      <div class="footer__column">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam esse eligendi vel consequatur corrupti
+        praesentium.
+      </div>
     </footer>
 
   </div>
