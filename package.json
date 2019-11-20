@@ -1,7 +1,7 @@
 {
   "name": "doc-storage.web",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
+  "description": "Storage for staff",
   "author": "kevlampiev <kevlampiev@gmail.com>",
   "private": true,
   "scripts": {

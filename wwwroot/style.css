@@ -6,7 +6,7 @@
   src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
 }
 body {
-  background-color: #ccc;
+  background-color: #c8c8c8;
 }
 .container {
   margin: 0 auto;
@@ -18,7 +18,7 @@ body {
 }
 header {
   min-height: 75px;
-  background: url("header.jpg");
+  background-color: rgba(200, 200, 200, 0.6);
   background-size: cover;
   color: #777;
   clip-path: polygon(0% 0%, 0% 88%, 48% 88%, 50% 100%, 100% 100%, 100% 0%);
@@ -30,6 +30,7 @@ header {
 }
 header .header__title img {
   width: 200px;
+  filter: hue-rotate(25deg);
 }
 header .header__menudiv {
   padding: 0;
@@ -53,9 +54,10 @@ header .header__menudiv {
   display: block;
   font-family: "Montserrat", sans-serif;
   height: 20px;
-  color: orangered;
-  text-decoration: none;
+  font-size: 20px;
+  color: #600000;
   font-weight: 700;
+  text-decoration: none;
 }
 .menu__item a:hover {
   color: black;
@@ -172,6 +174,12 @@ h1 {
   border-radius: 12px;
   margin: 5px;
 }
+.card__editBtn:hover,
+.card__deleteBtn:hover,
+.card__showItemsBtn:hover {
+  background-color: #222;
+  color: blanchedalmond;
+}
 .searchForm {
   margin-top: 5px;
   position: relative;
@@ -206,6 +214,10 @@ h1 {
   border-radius: 10px;
   margin-top: 0px;
 }
+.addBtn:hover {
+  background-color: #222;
+  color: blanchedalmond;
+}
 .summaryBand {
   min-height: 30px;
   border-top: 2px solid #ddd;
@@ -214,7 +226,7 @@ h1 {
 }
 footer {
   min-height: 100px;
-  background: url('footer.jpg');
+  background-color: rgba(200, 200, 200, 0.6);
   color: #222;
   padding: 30px;
   text-align: right;

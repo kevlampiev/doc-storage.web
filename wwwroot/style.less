@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
 body {
-  background-color: #ccc;
+  background-color: rgb(200, 200, 200);
 }
 
 .container {
@@ -17,7 +17,8 @@ body {
 header {
   //width: calc(100%-150px);
   min-height: 75px;
-  background: url("./header.jpg");
+  //background: url("./header.jpg");
+  background-color: rgba(200, 200, 200, 0.6);
   background-size: cover;
   color: #777;
   clip-path: polygon(0% 0%, 0% 88%, 48% 88%, 50% 100%, 100% 100%, 100% 0%);
@@ -30,7 +31,7 @@ header {
   .header__title img {
     width: 200px;
     //opacity: 0.5;
-    //filter: hue-rotate(10);
+    filter: hue-rotate(25deg);
   }
 
   .header__menudiv {
@@ -59,9 +60,10 @@ header {
     display: block;
     font-family: "Montserrat", sans-serif;
     height: 20px;
-    color: orangered;
-    text-decoration: none;
+    font-size: 20px;
+    color: #600000;
     font-weight: 700;
+    text-decoration: none;
   }
 
   a:hover {
@@ -208,6 +210,13 @@ h1 {
     //float: right;
     margin: 5px;
   }
+
+  &__editBtn:hover,
+  &__deleteBtn:hover,
+  &__showItemsBtn:hover {
+    background-color: #222;
+    color: blanchedalmond;
+  }
 }
 
 .searchForm {
@@ -248,6 +257,11 @@ h1 {
   margin-top: 0px;
 }
 
+.addBtn:hover {
+  background-color: #222;
+  color: blanchedalmond;
+}
+
 .summaryBand {
   min-height: 30px;
   border-top: 2px solid #ddd;
@@ -259,7 +273,8 @@ h1 {
 
 footer {
   min-height: 100px;
-  background: url('./footer.jpg');
+  //background: url('./footer.jpg');
+  background-color: rgba(200, 200, 200, 0.6);
   color: #222;
   padding: 30px;
   text-align: right;
