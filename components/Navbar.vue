@@ -6,7 +6,7 @@
     <div class="header__menudiv">
       <ul class="menu">
         <li class="menu__item">
-          <nuxt-link exact active-class="active" to="/">Dashboard</nuxt-link>
+          <nuxt-link exact active-class="active" to="/">Главная</nuxt-link>
         </li>
 
         <li class="menu__item">

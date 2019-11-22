@@ -18,10 +18,17 @@ module.exports = {
       }
     ],
     link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico'
-    }]
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://use.fontawesome.com/releases/v5.5.0/css/all.css',
+        integrity: 'sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU',
+        crossorigin: 'anonymous'
+      }
+    ]
   },
   /*
    ** Customize the progress bar color
@@ -29,27 +36,6 @@ module.exports = {
   loading: {
     color: '#3B8070'
   },
-  modules: [
-    'nuxt-fontawesome',
-    //OR like this
-    ['nuxt-fontawesome', {
-      component: 'fa',
-      imports: [
-        //import whole set
-        {
-          set: '@fortawesome/free-solid-svg-icons',
-          icons: ['fas']
-        },
-        //import 2 icons from set 
-        // please note this is PRO set in this example, 
-        // you must have it in your node_modules to actually import
-        {
-          set: '@fortawesome/pro-regular-svg-icons',
-          icons: ['faAdjust', 'faArchive']
-        }
-      ]
-    }]
-  ],
   /*
    ** Build configuration
    */
