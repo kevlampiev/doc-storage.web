@@ -1,14 +1,14 @@
 <template>
   <footer>
     <div class="footer__column">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolores odit
+      <h2 class="footer__header">Контактная информация</h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolores odit
       repellat.
     </div>
     <div class="footer__column">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, debitis!
+      <h2 class="footer__header">Дополнительные материалы</h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, debitis!
     </div>
     <div class="footer__column">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam esse
+      <h2 class="footer__header">Версия программы</h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam esse
       eligendi vel consequatur corrupti praesentium.
     </div>
   </footer>
@@ -31,6 +31,16 @@ footer {
   .footer__column {
     width: 30%;
     margin: 15px;
+  }
+
+  .footer__header {
+    text-transform: uppercase;
+    border-bottom: 1px solid #aaa;
+    font-style: normal;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    color: #999;
   }
 }
 </style>

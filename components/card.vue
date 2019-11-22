@@ -1,10 +1,10 @@
 <template>
   <section class="card">
-    <h2 class="card__header">Шкаф-купе в коридоре</h2>
+    <h2 class="card__header">Место хранения №{{card}}</h2>
     <div class="card__description">Pariatur error perferendis maiores explicabo officiis expedita!</div>
-    <div class="card__itemsInfo">5 ящиков</div>
+    <div class="card__itemsInfo">{{Math.floor(Math.random()*12)}} ящиков</div>
     <button class="card__editBtn">
-      <i class="fa fa-pencil" aria-hidden="true"></i>
+      <i class="fa fa-pencil" aria-hidden="true" @click.prevent="editCard(card)"></i>
     </button>
     <button class="card__deleteBtn">
       <i class="fa fa-trash-o" aria-hidden="true"></i>
@@ -16,7 +16,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["index", "card"],
+  methods: {
+    editCard(card) {
+      this.$router.push("/docStorage/" + card);
+    }
+  }
+};
 </script>
 
 
