@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-default">
     <Navbar />
     <main>
       <nuxt />
@@ -26,7 +26,7 @@ body {
   background-color: rgb(200, 200, 200);
 }
 
-.container {
+.container-default {
   margin: 0 auto;
   background-color: #fff;
   max-width: 1280px;

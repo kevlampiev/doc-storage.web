@@ -17,7 +17,7 @@
           <a href="#">Календарь</a>
         </li>
         <li class="menu__item">
-          <a href="#">Выйти</a>
+          <nuxt-link active-class="active" to="/login">Войти</nuxt-link>
         </li>
       </ul>
       <div class="userInfo">

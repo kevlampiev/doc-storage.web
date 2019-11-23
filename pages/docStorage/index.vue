@@ -24,6 +24,7 @@
 import Card from "../../components/card";
 import Search from "../../components/search";
 export default {
+  layout: "default",
   methods: {
     editCard(card) {
       this.$router.push("/buildings/" + card);

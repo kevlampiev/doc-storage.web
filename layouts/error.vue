@@ -9,6 +9,10 @@
   </section>
 </template>
 
+<script>
+export default {};
+</script>
+
 <style scoped lang="less">
 .cntr {
   margin: 0 auto;
