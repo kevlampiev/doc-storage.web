@@ -1,5 +1,5 @@
 <template>
-  <div class="login-div">
+  <div class="login-div box-shadowed">
     <form>
       <label for="login">Логин</label>
       <input type="text" name="login" />
@@ -12,19 +12,19 @@
 
 <script>
 export default {
-  layout: "empty"
+  layout: "login"
 };
 </script>
 
 <style lang="less">
 .login-div {
   color: #444;
-  border: 1px solid #bbb;
+  background-color: #fff;
   width: 300px;
   margin: auto;
   padding: 20px;
-  box-shadow: 7px 7px 5px 0px rgba(201, 201, 201, 0.75);
   height: 200px;
+  filter: opacity(1) brightness(100%);
   form {
     //padding: 25px;
     display: flex;
@@ -32,19 +32,19 @@ export default {
     justify-content: center;
     input {
       width: 258px;
-      height: 25px;
+      //      height: 25px;
       margin: 15px 0;
-      border-radius: 12px;
-      padding-left: 12px;
-      background-color: rgba(255, 166, 0, 0.3);
-      border: 1px solid #bbb;
+      // border-radius: 12px;
+      // padding-left: 12px;
+      // background-color: rgba(255, 166, 0, 0.3);
+      // border: 1px solid #bbb;
     }
     button {
-      height: 25px;
+      //      height: 25px;
       width: 80px;
-      border-radius: 12px;
-      background-color: rgba(255, 166, 0, 0.3);
-      border: 1px solid #bbb;
+      // border-radius: 12px;
+      // background-color: rgba(255, 166, 0, 0.3);
+      // border: 1px solid #bbb;
     }
     label {
       color: #777;

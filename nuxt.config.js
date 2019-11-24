@@ -60,5 +60,8 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  css: [
+    '~assets/css/main.css'
+  ]
 }

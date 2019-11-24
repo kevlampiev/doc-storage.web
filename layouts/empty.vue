@@ -10,7 +10,7 @@ body {
 }
 .container-empty {
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #ddd;
   max-width: 1280px;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;

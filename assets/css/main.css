@@ -1,0 +1,19 @@
+input,
+textarea {
+  height: 25px;
+  border-radius: 12px;
+  padding-left: 12px;
+  background-color: rgba(252, 211, 136, 0.3);
+  border: 1px solid #bbb;
+  padding-left: 15px;
+}
+button {
+  height: 25px;
+  border-radius: 12px;
+  background-color: rgba(255, 166, 0, 0.3);
+  border: 1px solid #bbb;
+}
+.box-shadowed {
+  border: 1px solid #bbb;
+  box-shadow: 7px 7px 5px 0px rgba(201, 201, 201, 0.75);
+}

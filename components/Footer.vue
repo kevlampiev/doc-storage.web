@@ -17,8 +17,11 @@
 <style lang="less">
 footer {
   min-height: 100px;
-  //background: url('./footer.jpg');
-  background-color: rgba(200, 200, 200, 0.6);
+  background: url("../assets/wall2.png") repeat;
+  background-color: #ccc;
+  //filter: opacity(0.5);
+  //background-size: 100%;
+
   color: #222;
   padding: 30px;
   text-align: right;

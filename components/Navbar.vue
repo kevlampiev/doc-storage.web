@@ -37,11 +37,13 @@
 
 <style lang="less">
 header {
-  //width: calc(100%-150px);
   min-height: 75px;
-  //background: url("./header.jpg");
-  background-color: rgba(200, 200, 200, 0.6);
-  background-size: cover;
+  // background: url("../assets/wall.jpeg") no-repeat;
+  // background-size: 100%;
+
+  background: url("../assets/wall2.png") repeat;
+  background-color: #ccc;
+
   color: #777;
   clip-path: polygon(0% 0%, 0% 88%, 48% 88%, 50% 100%, 100% 100%, 100% 0%);
   border-bottom: 1px solid rgb(213, 213, 248);
