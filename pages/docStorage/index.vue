@@ -10,29 +10,52 @@
     </div>
 
     <div class="cardsContainer">
-      <card v-for="(card, index) of 14" :key="index" :card="card"></card>
+      <card
+        v-for="(card, index) of 14"
+        :key="index"
+        :card="card"
+        :iconClass="iconClass"
+        :nextIconClass="nextIconClass"
+      ></card>
     </div>
 
     <div class="summaryBand">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi,
       reiciendis?
     </div>
+    <editCard :showModal="showModal" />
+    <deleteConfForm :deleteConfirmation="deleteConfirmation" />
   </div>
 </template>
 
 <script>
 import Card from "../../components/card";
 import Search from "../../components/search";
+import editCard from "../../components/cardEdit";
+import deleteConfForm from "../../components/confirmation";
 export default {
   layout: "default",
+  data: () => {
+    return {
+      iconClass: "fa fa-home",
+      nextIconClass: "fa fa-tasks",
+      showModal: false,
+      deleteConfirmation: false
+    };
+  },
   methods: {
     editCard(card) {
-      this.$router.push("/buildings/" + card);
+      //this.$router.push("/buildings/" + card);
+      if (!this.showModal && !this.deleteConfirmation) {
+        this.showModal = true;
+      }
     }
   },
   components: {
     Card,
-    Search
+    Search,
+    editCard,
+    deleteConfForm
   }
 };
 </script>
