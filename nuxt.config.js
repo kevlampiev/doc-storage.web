@@ -41,6 +41,12 @@ module.exports = {
     color: '#3B8070'
   },
   /*
+   ** Nuxt.js modules
+   */
+  modules: [
+    '@nuxtjs/axios'
+  ],
+  /*
    ** Build configuration
    */
   build: {

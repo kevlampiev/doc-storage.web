@@ -1,10 +1,10 @@
 <template>
   <div class="delConf-form box-shadowed" v-show="deleteConfirmation">
-    <h2>Действительно удалить запись</h2>
-    <button class="close-btn" @click.prevent="cancelDelete()">X</button>
+    <h2>Действительно удалить запись?</h2>
+    <button class="close-btn" @click.prevent="$parent.cancel()">X</button>
     <form action>
-      <button @click.prevent="cancelDelete()">Удалить</button>
-      <button @click.prevent="cancelDelete()">Отмена</button>
+      <button @click.prevent="$parent.post()">Удалить</button>
+      <button @click.prevent="$parent.cancel()">Отмена</button>
     </form>
   </div>
 </template>
@@ -12,11 +12,7 @@
 <script>
 export default {
   props: ["deleteConfirmation"],
-  methods: {
-    cancelDelete() {
-      this.$parent.deleteConfirmation = false;
-    }
-  }
+  methods: {}
 };
 </script>
 

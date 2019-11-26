@@ -1,40 +1,32 @@
 <template>
   <section class="card">
     <h2 class="card__header">
-      <i v-bind:class="iconClass" aria-hidden="true">&nbsp;&nbsp;Место хранения №{{card}}</i>
+      <i v-bind:class="cardsSettings.iconClass" aria-hidden="true">&nbsp;&nbsp;{{ card.Name }}</i>
     </h2>
-    <div class="card__description">Pariatur error perferendis maiores explicabo officiis expedita!</div>
-    <div class="card__itemsInfo">{{Math.floor(Math.random()*12)}} ящиков</div>
+    <div class="card__description">{{ card.Description }}</div>
+
     <button class="card__editBtn">
-      <i class="fa fa-pencil" aria-hidden="true" @click.prevent="editCard(card)"></i>
+      <i class="fa fa-pencil" aria-hidden="true" @click.prevent="$parent.editCard(card)"></i>
     </button>
     <button class="card__deleteBtn">
-      <i class="fa fa-trash-o" @click.prevent="askForDelete()" aria-hidden="true"></i>
+      <i class="fa fa-trash-o" @click.prevent="$parent.deleteCard(card)" aria-hidden="true"></i>
     </button>
     <button class="card__showItemsBtn">
-      <i v-bind:class="nextIconClass" aria-hidden="true">&nbsp;&nbsp;Содержимое</i>
+      <i
+        v-bind:class="cardsSettings.nextIconClass"
+        aria-hidden="true"
+      >&nbsp;&nbsp;{{ card.ItemsCount }} вложений</i>
     </button>
   </section>
 </template>
 
 <script>
 export default {
-  props: ["index", "card", "iconClass", "nextIconClass"],
+  props: ["card", "cardsSettings"],
 
-  methods: {
-    editCard(card) {
-      //this.$router.push("/docStorage/" + card);
-      this.$parent.editCard(card);
-    },
-    askForDelete() {
-      if (!this.$parent.showModal && !this.$parent.deleteConfirmation) {
-        this.$parent.deleteConfirmation = true;
-      }
-    }
-  }
+  methods: {}
 };
 </script>
-
 
 <style lang="less">
 .card {
@@ -52,24 +44,26 @@ export default {
   &__header {
     font-size: medium;
     color: maroon;
+    height: 25px;
   }
 
   &__description {
-    height: 100px;
+    height: 110px;
     //outline: 1px dashed gray;
     font-size: smaller;
     font-style: italic;
     overflow: hidden;
     background-color: #fff;
+    padding: 5px;
   }
 
-  &__itemsInfo {
-    height: 20px;
-    text-align: right;
-    font-size: smaller;
-    font-style: italic;
-    padding-right: 5px;
-  }
+  // &__itemsInfo {
+  //   height: 20px;
+  //   text-align: right;
+  //   font-size: smaller;
+  //   font-style: italic;
+  //   padding-right: 5px;
+  // }
 
   &__editBtn,
   &__deleteBtn {
@@ -104,4 +98,3 @@ export default {
   }
 }
 </style>
-

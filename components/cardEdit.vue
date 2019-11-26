@@ -1,26 +1,28 @@
 <template>
-  <div class="editCard-form box-shadowed" v-show="showModal">
-    <h2>Изменение информации о месте хранения</h2>
-    <button class="close-btn" @click.prevent="closeForm()">X</button>
+  <div class="editCard-form box-shadowed" v-show="editFormVisible">
+    <h2>{{editFormTitle}}</h2>
+    <button class="close-btn" @click.prevent="$parent.cancel()">X</button>
     <form action>
       <label for="name">Наименование</label>
-      <input type="text" name="name" />
+      <input type="text" name="name" v-model="currentCard.Name" />
       <label for="description">Краткое описание</label>
-      <textarea name="description" id="description" cols="30" rows="10"></textarea>
-      <button @click.prevent="closeForm()">Сохранить</button>
-      <button @click.prevent="closeForm()">Отмена</button>
+      <textarea
+        name="description"
+        id="description"
+        cols="30"
+        rows="10"
+        v-model="currentCard.Description"
+      ></textarea>
+      <button @click.prevent="$parent.post()">Сохранить</button>
+      <button @click.prevent="$parent.cancel()">Отмена</button>
     </form>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["showModal"],
-  methods: {
-    closeForm() {
-      this.$parent.showModal = false;
-    }
-  }
+  props: ["currentCard", "editFormVisible", "editFormTitle"],
+  methods: {}
 };
 </script>
 

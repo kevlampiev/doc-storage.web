@@ -1,30 +1,28 @@
 <template>
   <div class="ma">
     <h1>Система хранения</h1>
+
     <div class="controlPanel">
       <Search />
       <button class="addBtn">
-        <!-- <fa icon="dollar-sign" style="font-size: 12px" /> -->
-        <i class="fa fa-plus-square-o" aria-hidden="true">Добавить</i>
+        <i class="fa fa-plus-square-o" aria-hidden="true" @click.prevent="addCard()">Добавить</i>
       </button>
     </div>
 
     <div class="cardsContainer">
-      <card
-        v-for="(card, index) of 14"
-        :key="index"
-        :card="card"
-        :iconClass="iconClass"
-        :nextIconClass="nextIconClass"
-      ></card>
+      <card v-for="card of cardArray" :key="card.id" :card="card" :cardsSettings="cardsSettings"></card>
     </div>
 
     <div class="summaryBand">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi,
       reiciendis?
     </div>
-    <editCard :showModal="showModal" />
-    <deleteConfForm :deleteConfirmation="deleteConfirmation" />
+    <editCard
+      :currentCard="currentCard"
+      :editFormVisible="stateCode === 1 || stateCode === 2"
+      :editFormTitle="stateCode === 1 ? 'Добавление записи' : 'Изменение записи'"
+    />
+    <deleteConfForm :deleteConfirmation="stateCode === 3" />
   </div>
 </template>
 
@@ -37,25 +35,66 @@ export default {
   layout: "default",
   data: () => {
     return {
-      iconClass: "fa fa-home",
-      nextIconClass: "fa fa-tasks",
-      showModal: false,
-      deleteConfirmation: false
+      stateCode: 0, //0 -режим чтения, 1 - добавить, 2- изменить, 3 - удалить запись
+      cardsSettings: {
+        iconClass: "fa fa-home",
+        nextIconClass: "fa fa-tasks"
+      },
+      cardArray: [],
+      currentCard: {},
+      backUpCard: {}
     };
   },
   methods: {
+    addCard() {
+      this.currentCard = {};
+      this.stateCode = 1;
+    },
+
     editCard(card) {
-      //this.$router.push("/buildings/" + card);
-      if (!this.showModal && !this.deleteConfirmation) {
-        this.showModal = true;
+      this.backUpCard = card;
+      this.currentCard = Object.assign({}, card);
+      this.stateCode = 2;
+    },
+    deleteCard(card) {
+      if (card.ItemsCount === 0) {
+        this.currentCard = card;
+        this.stateCode = 3;
       }
+    },
+    /**
+     * Завершает модификацию списка карточек
+     */
+    post() {
+      switch (this.stateCode) {
+        case 1:
+          this.cardArray.push(this.currentCard);
+          break;
+        case 2:
+          this.backUpCard = this.currentCard;
+          break;
+        case 3:
+          this.cardArray = this.cardArray.filter(el => el !== this.currentCard);
+          break;
+      }
+      this.stateCode = 0;
+    },
+    cancel() {
+      this.stateCode = 0; //Перешли в режим просмотра и все
     }
   },
+
+  computed: {},
   components: {
     Card,
     Search,
     editCard,
     deleteConfForm
+  },
+  async mounted() {
+    this.cardArray = await this.$axios.$get(
+      "https://raw.githubusercontent.com/kevlampiev/JSONdata/master/jsLessonsLvl2/selectAllBuildings.json"
+    );
   }
 };
 </script>
