@@ -11,9 +11,14 @@
     <button class="card__editBtn">
       <i class="fa fa-pencil" aria-hidden="true" @click.prevent="$parent.editCard(card)"></i>
     </button>
-    <button class="card__deleteBtn" v-show="card.ItemsCount==0">
+
+    <button class="card__deleteBtn" v-if="card.ItemsCount==0">
       <i class="fa fa-trash-o" @click.prevent="$parent.deleteCard(card)" aria-hidden="true"></i>
     </button>
+    <button class="card__disabledBtn" v-else>
+      <i class="fa fa-trash-o" @click.prevent="$parent.deleteCard(card)" aria-hidden="true"></i>
+    </button>
+
     <button class="card__showItemsBtn">
       <i
         v-bind:class="cardsSettings.nextIconClass"
@@ -74,6 +79,18 @@ export default {
     font-style: italic;
     color: #333;
     background-color: rgba(255, 166, 0, 0.14);
+    border: 1px solid #ccc;
+    height: 25px;
+    border-radius: 12px;
+    float: right;
+    margin: 5px;
+  }
+
+  &__disabledBtn {
+    font-size: small;
+    font-style: italic;
+    color: #ccc;
+    background-color: #eee;
     border: 1px solid #ccc;
     height: 25px;
     border-radius: 12px;
