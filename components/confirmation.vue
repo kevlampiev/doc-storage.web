@@ -1,5 +1,5 @@
 <template>
-  <div class="delConf-form box-shadowed" v-show="deleteConfirmation">
+  <div class="delConf-form box-shadowed" v-if="deleteConfirmation">
     <h2>Действительно удалить запись?</h2>
     <button class="close-btn" @click.prevent="$parent.cancel()">X</button>
     <form action>

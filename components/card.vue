@@ -3,12 +3,15 @@
     <h2 class="card__header">
       <i v-bind:class="cardsSettings.iconClass" aria-hidden="true">&nbsp;&nbsp;{{ card.Name }}</i>
     </h2>
-    <div class="card__description">{{ card.Description }}</div>
+    <div
+      class="card__description"
+      :style="`background: url(${cardsSettings.url_img})`"
+    >{{ card.Description }}</div>
 
     <button class="card__editBtn">
       <i class="fa fa-pencil" aria-hidden="true" @click.prevent="$parent.editCard(card)"></i>
     </button>
-    <button class="card__deleteBtn">
+    <button class="card__deleteBtn" v-show="card.ItemsCount==0">
       <i class="fa fa-trash-o" @click.prevent="$parent.deleteCard(card)" aria-hidden="true"></i>
     </button>
     <button class="card__showItemsBtn">

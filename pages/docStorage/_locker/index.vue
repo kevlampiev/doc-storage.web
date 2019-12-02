@@ -1,6 +1,6 @@
 <template>
   <div class="ma">
-    <h1>Система хранения. DocStorage</h1>
+    <h1>Система хранения. Стеллажи {{$route.params.id}}</h1>
 
     <div class="controlPanel">
       <Search />
@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import Card from "../../components/card";
-import deleteConfForm from "../../components/confirmation";
+import Card from "../../../components/card";
+import deleteConfForm from "../../../components/confirmation";
 export default {
   layout: "default",
   data: () => {
@@ -37,7 +37,7 @@ export default {
       cardsSettings: {
         iconClass: "fa fa-home",
         nextIconClass: "fa fa-tasks",
-        url_img: "../assets/icons/place.jpg"
+        url_img: "../../../assets/icons/place.jpg"
       },
       cardArray: [],
       currentCard: {},
@@ -86,9 +86,9 @@ export default {
   computed: {},
   components: {
     Card,
-    editCard: () => import("../../components/cardEdit"),
-    Search: () => import("../../components/search"),
-    deleteConfForm: () => import("../../components/confirmation")
+    editCard: () => import("../../../components/cardEdit"),
+    Search: () => import("../../../components/search"),
+    deleteConfForm: () => import("@/components/confirmation")
   },
   async mounted() {
     this.cardArray = await this.$axios.$get(

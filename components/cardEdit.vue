@@ -1,5 +1,5 @@
 <template>
-  <div class="editCard-form box-shadowed" v-show="editFormVisible">
+  <div class="editCard-form box-shadowed">
     <h2>{{editFormTitle}}</h2>
     <button class="close-btn" @click.prevent="$parent.cancel()">X</button>
     <form action>
@@ -21,7 +21,11 @@
 
 <script>
 export default {
-  props: ["currentCard", "editFormVisible", "editFormTitle"],
+  props: [
+    "currentCard",
+    // "editFormVisible",
+    "editFormTitle"
+  ],
   methods: {}
 };
 </script>
