@@ -35,9 +35,10 @@ export default {
     return {
       stateCode: 0, //0 -режим чтения, 1 - добавить, 2- изменить, 3 - удалить запись
       cardsSettings: {
+        mainClass: "card card-building",
         iconClass: "fa fa-home",
-        nextIconClass: "fa fa-tasks",
-        url_img: "../assets/icons/place.jpg"
+        nextIconClass: "fa-grip-vertical",
+        url_img: "../../assets/icons/place.jpg"
       },
       cardArray: [],
       currentCard: {},

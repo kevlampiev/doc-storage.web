@@ -3,14 +3,23 @@
     <h1>Система хранения. Стеллажи {{$route.params.id}}</h1>
 
     <div class="controlPanel">
-      <Search />
+      <div class="localMenu">
+        <Search />
+        <button class="lvlUpBtn">
+          <i
+            class="fa fa-level-up"
+            aria-hidden="true"
+            @click.prevent="lvlUp()"
+          >&nbsp;&nbsp;На уровень вверх</i>
+        </button>
+      </div>
       <button class="addBtn">
-        <i class="fa fa-plus-square-o" aria-hidden="true" @click.prevent="addCard()">Добавить</i>
+        <i class="fa fa-plus" aria-hidden="true" @click.prevent="addCard()">&nbsp;Добавить</i>
       </button>
     </div>
 
     <div class="cardsContainer">
-      <card v-for="card of cardArray" :key="card.id" :card="card" :cardsSettings="cardsSettings"></card>
+      <card v-for="card of cardArray" :key=" card.id" :card="card" :cardsSettings="cardsSettings"></card>
     </div>
 
     <div class="summaryBand">
@@ -35,9 +44,10 @@ export default {
     return {
       stateCode: 0, //0 -режим чтения, 1 - добавить, 2- изменить, 3 - удалить запись
       cardsSettings: {
-        iconClass: "fa fa-home",
-        nextIconClass: "fa fa-tasks",
-        url_img: "../../../assets/icons/place.jpg"
+        mainClass: "card card-locker",
+        iconClass: "fas fa-grip-vertical",
+        nextIconClass: "fas fa-box-open",
+        url_img: "../../assets/icons/place.jpg"
       },
       cardArray: [],
       currentCard: {},
@@ -80,6 +90,10 @@ export default {
     },
     cancel() {
       this.stateCode = 0; //Перешли в режим просмотра и все
+    },
+
+    lvlUp() {
+      location.href = "@/docStorage";
     }
   },
 
@@ -92,7 +106,7 @@ export default {
   },
   async mounted() {
     this.cardArray = await this.$axios.$get(
-      "https://raw.githubusercontent.com/kevlampiev/JSONdata/master/jsLessonsLvl2/selectAllBuildings.json"
+      "https://raw.githubusercontent.com/kevlampiev/JSONdata/master/jsLessonsLvl2/selectAllLockers.json"
     );
   }
 };
@@ -129,15 +143,18 @@ h1 {
   //justify-content: space-between;
 }
 
-.addBtn {
+.addBtn,
+.lvlUpBtn {
   background-color: rgba(255, 166, 0, 0.3);
   border: 1px solid #ccc;
   height: 20px;
   border-radius: 10px;
   margin-top: 5px;
+  margin-left: 10px;
 }
 
-.addBtn:hover {
+.addBtn:hover,
+.lvlUpBtn:hover {
   background-color: #222;
   color: blanchedalmond;
 }
@@ -147,5 +164,11 @@ h1 {
   border-top: 2px solid #ddd;
   text-align: right;
   font-style: italic;
+}
+
+.localMenu {
+  width: 400px;
+  display: flex;
+  flex-wrap: nowrap;
 }
 </style>

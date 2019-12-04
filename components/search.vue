@@ -20,7 +20,7 @@ export default {};
 
   &__input {
     width: 100%;
-    border: 1px solid #eee;
+    border: 1px solid #ccc;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     margin-right: 0;
@@ -28,16 +28,18 @@ export default {};
     font-size: 14px;
     font-style: italic;
     padding-left: 20px;
+    height: 20px;
     background-color: rgba(255, 166, 0, 0.3);
   }
 
   &__button {
     position: absolute;
-    top: 3px;
-    left: 3px;
-    padding-left: 0;
-    background-color: rgba(255, 166, 0, 0.3);
-    color: gray;
+    top: 0px;
+    left: 0px;
+    height: 20px;
+    padding-left: 4px;
+    background-color: rgba(255, 166, 0, 0);
+    color: black;
     border: none;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
